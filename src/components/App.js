@@ -27,9 +27,9 @@ const App = (props) => {
       <button id="Next" data-testid="button-next" onClick={incr}>Next</button>
       :null}
 
-      <h1 data-testid="title">{props.slides[slide].title}</h1>
-      <p data-testid="text">{props.slides[slide].text}</p>
-      {/* <Slide title={props.slides[slide].title} text={props.slides[slide].text}></Slide> */}
+      {/* <h1 data-testid="title">{props.slides[slide].title}</h1>
+      <p data-testid="text">{props.slides[slide].text}</p> */}
+      <Slide title={props.slides[slide].title} text={props.slides[slide].text}></Slide>
 
     </div>
   )
