@@ -15,15 +15,15 @@ const App = (prop) => {
   return (
     <div>
       {slide !== 0 ? 
-      <button id="Restart" data-testid="button-restart" onClick={() => setSlide(0)}>Restart</button>
+      <button data-testid="button-restart" onClick={() => setSlide(0)}>Restart</button>
       :null}
 
       {slide !== 0 ? 
-      <button id="Prev" data-testid="button-prev" onClick={decr}>Prev</button>
+      <button data-testid="button-prev" onClick={decr}>Prev</button>
       :null}
 
       {slide < prop.slides.length-1 ? 
-      <button id="Next" data-testid="button-next" onClick={incr}>Next</button>
+      <button data-testid="button-next" onClick={incr}>Next</button>
       :null}
 
       <h1 data-testid="title">{prop.slides[slide].title}</h1>
