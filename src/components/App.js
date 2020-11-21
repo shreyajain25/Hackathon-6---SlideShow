@@ -4,6 +4,8 @@ import Slide from './Slide';
 
 const App = (props) => {
   const [slide, setSlide] = useState(0);
+  const [disable, setDisable] = useState(false);
+
 
   const decr = () =>{
     setSlide(slide - 1);
@@ -14,15 +16,15 @@ const App = (props) => {
   return (
     <div>
       {slide !== 0 ? 
-      <button className="Restart" data-testid="button-restart" onClick={() => setSlide(0)}>Restart</button>
+      <button id="Restart" data-testid="button-restart" onClick={() => setSlide(0)}>Restart</button>
       :null}
 
       {slide !== 0 ? 
-      <button className="Prev" data-testid="button-prev" onClick={decr}>Prev</button>
+      <button id="Prev" data-testid="button-prev" onClick={decr}>Prev</button>
       :null}
 
       {slide < props.slides.length-1 ? 
-      <button className="Next" data-testid="button-next" onClick={incr}>Next</button>
+      <button id="Next" data-testid="button-next" onClick={incr}>Next</button>
       :null}
 
       <h1 data-testid="title">{props.slides[slide].title}</h1>
