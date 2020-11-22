@@ -4,7 +4,6 @@ import '../styles/App.css';
 
 const App = (prop) => {
   const [slide, setSlide] = useState(0);
-  // const [disable, setDisable] = useState(false);
 
   const decr = () =>{
     setSlide(slide - 1);
@@ -14,17 +13,11 @@ const App = (prop) => {
   }
   return (
     <div>
-      {slide !== 0 ? 
-      <button data-testid="button-restart" onClick={() => setSlide(0)}>Restart</button>
-      :null}
+      <button data-testid="button-restart" onClick={() => setSlide(0)} disabled={slide === 0}>Restart</button>
 
-      {slide !== 0 ? 
-      <button data-testid="button-prev" onClick={decr}>Prev</button>
-      :null}
+      <button data-testid="button-prev" onClick={decr} disabled={slide === 0}>Prev</button>
 
-      {slide < prop.slides.length-1 ? 
-      <button data-testid="button-next" onClick={incr}>Next</button>
-      :null}
+      <button data-testid="button-next" onClick={incr} disabled={slide === prop.slides.length-1}>Next</button>
 
       <h1 data-testid="title">{prop.slides[slide].title}</h1>
       <p data-testid="text">{prop.slides[slide].text}</p>
